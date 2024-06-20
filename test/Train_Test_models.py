@@ -4,10 +4,8 @@ import pickle,os
 from sklearn.model_selection import train_test_split
 import numpy as np
 import utils_python as utils
-
-    
-
 from copy import deepcopy
+
 def preprocess_input_for_tree_models(input_data):
     diamonds_processed = deepcopy(input_data)
     # remove every line with a missing value
