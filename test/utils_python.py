@@ -1,4 +1,5 @@
 import datetime
+import Train_Test_models
 import pickle
 import pandas as pd
 from sklearn.metrics import r2_score, mean_absolute_error
@@ -44,3 +45,11 @@ def save_scores(y_test, y_pred, model_name):
 
     # save the scores to disk as csv
     pd.DataFrame(scores, index=[0]).to_csv(scores_path + model_name + '.csv', index=False)
+
+def predict_value(data, model_name):
+    model_path = './history/current_models/'
+    data = Train_Test_models.preprocess_input_for_tree_models(data)
+    with open(model_path + model_name + '.pkl', 'rb') as f:
+        model = pickle.load(f)
+    model = model['model']
+    return model.predict(data.drop(columns=['price']))
