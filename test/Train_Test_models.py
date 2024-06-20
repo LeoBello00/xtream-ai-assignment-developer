@@ -3,7 +3,7 @@ import pandas as pd
 import pickle,os
 from sklearn.model_selection import train_test_split
 import numpy as np
-import utils
+import utils_python as utils
 
     
 
@@ -31,10 +31,11 @@ def fit_test_models(new_data):
     # Load the models from the models folder
     model_path = "./history/current_models"
     models = {}
-
+    print("Loading models")
     for file in os.listdir(model_path):
         if file.endswith(".pkl"):
             model_name = file.split(".")[0]
+            print(f"Loading model: {model_path}/{file}")
             model = pickle.load(open(f"{model_path}/{file}", "rb"))
             models[model_name] = model
 
