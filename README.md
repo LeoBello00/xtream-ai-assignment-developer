@@ -68,4 +68,98 @@ Observability is key. Save every request and response made to the APIs to a **pr
 ---
 
 ## How to run
-Please fill this section as part of the assignment.
+Sure, here is the translated README file in English, formatted using Markdown:
+
+---
+
+# Automated Model Training Pipeline
+
+This project provides an automated pipeline for training machine learning models. The pipeline monitors a specific folder for new files, automatically adds them to the main dataset, and retrains existing models.
+
+## Project Structure
+
+- `./test/Folder_Scanner.py`: Main script that monitors a folder for new files and manages the dataset and model retraining.
+- `./history/current_models/`: Folder where machine learning models are saved as pickle files.
+- `./data/`: Folder containing the main dataset.
+- `./test/app.py`: Script to start the project's APIs.
+
+## Requirements
+
+Make sure you have installed the libraries listed in the `requirements.txt` file.
+
+You can install them by running:
+```bash
+pip install -r requirements.txt
+```
+
+## Usage Instructions
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/LeoBello00/xtream-ai-assignment-developer.git
+   cd xtream-ai-assignment-developer
+   ```
+
+2. **Navigate to the project folder:**
+   Ensure you are in the project's main folder.
+
+3. **Start the `Folder_Scanner.py` script:**
+   Run the following command to start monitoring the folder:
+   ```bash
+   python ./test/Folder_Scanner.py
+   ```
+
+4. **Add a New File:**
+   When a new file is added to the monitored folder, it will automatically be added to the main dataset and all models saved as pickle files in the `./history/current_models/` folder will be retrained.
+
+5. **Add a New Model:**
+   To add a new model to the pipeline:
+   - Create and save the model as a pickle file in the `./history/current_models/` folder.
+   - The new model will be automatically integrated into the retraining pipeline.
+
+## API Usage
+
+The project's APIs are managed by the `app.py` script located in `./test/app.py`. To start the API server, run the command:
+
+```bash
+python ./test/app.py
+```
+
+The following endpoints are available:
+
+### **GET /predict**
+Returns predictions based on the provided parameters.
+
+**Request Parameters:**
+- `color`: Diamond color
+- `cut`: Diamond cut
+- `carat`: Diamond carat weight (float)
+- `depth`: Diamond depth (float)
+- `table`: Diamond table (float)
+- `clarity`: Diamond clarity
+- `x`: Diamond x dimension (float)
+- `y`: Diamond y dimension (float)
+- `z`: Diamond z dimension (float)
+
+**Example Request:**
+```bash
+curl -X GET "http://localhost:5000/predict?color=E&cut=Ideal&carat=0.3&depth=61.5&table=55&clarity=VS2&x=4.3&y=4.35&z=2.7"
+```
+
+### **GET /similar_samples**
+Returns similar samples based on the provided parameters.
+
+**Request Parameters:**
+- `n`: Number of similar samples to return
+- `cut`: Diamond cut
+- `color`: Diamond color
+- `clarity`: Diamond clarity
+- `weight`: Diamond weight (float)
+
+**Example Request:**
+```bash
+curl -X GET "http://localhost:5000/similar_samples?n=5&cut=Ideal&color=E&clarity=VS2&weight=0.3"
+```
+
+---
+
