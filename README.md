@@ -69,7 +69,6 @@ Observability is key. Save every request and response made to the APIs to a **pr
 
 ## How to run
 
----
 
 # Automated Model Training Pipeline
 
