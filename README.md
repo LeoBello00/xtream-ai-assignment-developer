@@ -117,6 +117,8 @@ pip install -r requirements.txt
    - Create and save the model as a pickle file in the `./history/current_models/` folder.
    - The new model will be automatically integrated into the retraining pipeline.
 
+To check the old scores and models trained they are all saved into the ./history folder respectively in their own foldders
+
 ## API Usage
 
 The project's APIs are managed by the `app.py` script located in `./test/app.py`. To start the API server, run the command:
