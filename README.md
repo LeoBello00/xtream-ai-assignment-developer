@@ -68,7 +68,6 @@ Observability is key. Save every request and response made to the APIs to a **pr
 ---
 
 ## How to run
-Sure, here is the translated README file in English, formatted using Markdown:
 
 ---
 
