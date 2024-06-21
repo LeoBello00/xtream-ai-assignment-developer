@@ -82,6 +82,9 @@ This project provides an automated pipeline for training machine learning models
 - `./data/`: Folder containing the main dataset.
 - `./test/app.py`: Script to start the project's APIs.
 
+
+## Usage Instructions
+
 ## Requirements
 
 Make sure you have installed the libraries listed in the `requirements.txt` file.
@@ -90,8 +93,6 @@ You can install them by running:
 ```bash
 pip install -r requirements.txt
 ```
-
-## Usage Instructions
 
 1. **Clone the repository:**
    ```bash
