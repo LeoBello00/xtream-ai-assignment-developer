@@ -26,7 +26,6 @@ def merge_csv_files(new_csv):
 
 def process_new_file(file_path):
     new_data_preprocessed = []
-    # Add your data processing and model training code here
     print(f"Processing file: {file_path}")
     new_data = merge_csv_files(file_path)
     new_data_preprocessed_tree = ttm.preprocess_input_for_tree_models(new_data)
@@ -34,7 +33,6 @@ def process_new_file(file_path):
     new_data_preprocessed.append(new_data_preprocessed_linear)
     new_data_preprocessed.append(new_data_preprocessed_tree)
     
-    #print('new data 0', new_data_preprocessed[0].head())
     ttm.fit_test_models(new_data_preprocessed)
 
 

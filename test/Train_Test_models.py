@@ -1,4 +1,3 @@
-# import every model using pickle into a dictionary, by importing every pickle in the models folder
 import pandas as pd
 import pickle,os
 from sklearn.model_selection import train_test_split
@@ -8,8 +7,6 @@ from copy import deepcopy
 
 def preprocess_input_for_tree_models(input_data):
     diamonds_processed = deepcopy(input_data)
-    # remove every line with a missing value
-    # check if there is a column named price
     if 'price' not in diamonds_processed.columns:
         diamonds_processed = diamonds_processed[(diamonds_processed.x * diamonds_processed.y * diamonds_processed.z != 0)]
     else:
