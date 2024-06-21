@@ -1,8 +1,6 @@
 import logging
 import pandas as pd
 from flask import Flask, request, jsonify
-
-# Import custom utilities
 import utils_python as utils
 
 app = Flask(__name__)
