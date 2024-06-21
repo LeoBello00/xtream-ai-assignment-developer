@@ -109,9 +109,10 @@ pip install -r requirements.txt
    ```
 
 4. **Add a New File:**
-   When a new file is added to the monitored folder, it will automatically be added to the main dataset and all models saved as pickle files in the `./history/current_models/` folder will be retrained.
+   When a new file is added to the monitored folder ./data/new_data, it will automatically be added to the main dataset and all models saved as pickle files in the `./history/current_models/` folder will be retrained.
+   There are test csv files into the ./data/test_data and they can be used to test the pipeline, just move them into the ./data/new_data while the script is activated and working
 
-5. **Add a New Model:**
+5. **optional: Add a New Model:**
    To add a new model to the pipeline:
    - Create and save the model as a pickle file in the `./history/current_models/` folder.
    - The new model will be automatically integrated into the retraining pipeline.
