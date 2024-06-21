@@ -9,7 +9,11 @@ from copy import deepcopy
 def preprocess_input_for_tree_models(input_data):
     diamonds_processed = deepcopy(input_data)
     # remove every line with a missing value
-    diamonds_processed = diamonds_processed[(diamonds_processed.x * diamonds_processed.y * diamonds_processed.z != 0) & (diamonds_processed.price > 0)]
+    # check if there is a column named price
+    if 'price' not in diamonds_processed.columns:
+        diamonds_processed = diamonds_processed[(diamonds_processed.x * diamonds_processed.y * diamonds_processed.z != 0)]
+    else:
+        diamonds_processed = diamonds_processed[(diamonds_processed.x * diamonds_processed.y * diamonds_processed.z != 0) & (diamonds_processed.price > 0)]
     diamonds_processed['cut'] = pd.Categorical(diamonds_processed['cut'], categories=['Fair', 'Good', 'Very Good', 'Ideal', 'Premium'], ordered=True)
     diamonds_processed['color'] = pd.Categorical(diamonds_processed['color'], categories=['D', 'E', 'F', 'G', 'H', 'I', 'J'], ordered=True)
     diamonds_processed['clarity'] = pd.Categorical(diamonds_processed['clarity'], categories=['IF', 'VVS1', 'VVS2', 'VS1', 'VS2', 'SI1', 'SI2', 'I1'], ordered=True)
