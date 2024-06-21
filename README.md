@@ -85,7 +85,7 @@ This project provides an automated pipeline for training machine learning models
 
 ## Usage Instructions
 
-## Requirements
+**Requirements**
 
 Make sure you have installed the libraries listed in the `requirements.txt` file.
 
