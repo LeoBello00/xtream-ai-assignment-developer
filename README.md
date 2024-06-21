@@ -117,7 +117,7 @@ pip install -r requirements.txt
    - Create and save the model as a pickle file in the `./history/current_models/` folder.
    - The new model will be automatically integrated into the retraining pipeline.
 
-To check the old scores and models trained they are all saved into the ./history folder respectively in their own foldders
+To check the old scores and models trained they are all saved into the ./history folder respectively in their own folders
 
 ## API Usage
 
@@ -145,7 +145,7 @@ Returns predictions based on the provided parameters.
 
 **Example Request:**
 ```bash
-curl -X GET "http://localhost:5000/predict?color=E&cut=Ideal&carat=0.3&depth=61.5&table=55&clarity=VS2&x=4.3&y=4.35&z=2.7"
+curl -X GET "http://127.0.0.1:5000/predict?color=E&cut=Ideal&carat=0.3&depth=61.5&table=55&clarity=VS2&x=4.3&y=4.35&z=2.7"
 ```
 
 ### **GET /similar_samples**
@@ -160,7 +160,7 @@ Returns similar samples based on the provided parameters.
 
 **Example Request:**
 ```bash
-curl -X GET "http://localhost:5000/similar_samples?n=5&cut=Ideal&color=E&clarity=VS2&weight=0.3"
+curl -X GET "http://127.0.0.1:5000/similar_samples?n=5&cut=Ideal&color=E&clarity=VS2&weight=0.3"
 ```
 
 ---
